@@ -1,7 +1,7 @@
 version: 2
 
 sources:
-  - name: sources
+  - name: jaffle_shop
     database: dummy_db
     schema: load_data
     tables:

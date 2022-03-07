@@ -1,10 +1,10 @@
 
 SELECT 
 	index as index,
-	"ID" as id,
+	"ID" as payment_id,
 	"ORDERID" as order_id,
 	"PAYMENTMETHOD" as payment_method,
 	"STATUS" as status,
-	"AMOUNT" as amount,
+	"AMOUNT"/100 as amount,
 	"CREATED"::DATE as created
-FROM {{ source("sources", "stripe_payments") }}
+FROM {{ source("stripe", "stripe_payments") }}
