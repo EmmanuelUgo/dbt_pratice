@@ -1,0 +1,25 @@
+version: 2
+
+sources:
+  - name: jaffle_shop
+    description: Praticing dbt with the Jaffle Shop data
+    database: dummy_db
+    schema: load_data
+    tables:
+      - name: jaffle_shop_customers
+        description: A table that contains customer information
+        columns:
+          - name: '"ID"'
+            description: Unique ID for each customer
+            tests:
+              - not_null
+              - unique
+
+      - name: jaffle_shop_orders
+        description: A table that contains every order placed
+        columns:
+          - name: '"ID"'
+            description: Unique ID for each order
+            tests:
+              - not_null
+              - unique

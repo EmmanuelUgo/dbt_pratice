@@ -1,6 +1,5 @@
 
 SELECT 
-	index as index,
 	"ID" as payment_id,
 	"ORDERID" as order_id,
 	"PAYMENTMETHOD" as payment_method,

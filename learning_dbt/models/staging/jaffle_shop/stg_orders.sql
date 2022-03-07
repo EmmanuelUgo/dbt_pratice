@@ -1,6 +1,5 @@
 
 SELECT 
-	index as index,
 	"ID" as order_id,
 	"USER_ID" as user_id,
 	"ORDER_DATE"::DATE as order_date,

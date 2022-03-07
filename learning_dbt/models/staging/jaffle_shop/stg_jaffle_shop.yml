@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: stg_customers
+    columns:
+      - name: user_id
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_orders
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+          - unique
+      - name: status
+        tests: 
+          - accepted_values:
+              values: ['return_pending', 'returned', 'completed', 'placed', 'shipped']
+      - name: user_id
+        tests:
+          - relationships:
+              to: ref('stg_customers')
+              field: user_id

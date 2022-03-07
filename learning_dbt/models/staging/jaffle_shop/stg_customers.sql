@@ -1,7 +1,6 @@
 
 
 SELECT 
-	index as index,
 	"ID" as user_id,
 	"FIRST_NAME" as first_name,
 	"LAST_NAME" as last_name

@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: stg_stripe_payments
+    columns:
+      - name: payment_id
+        tests:
+          - not_null
+          - unique
+      - name: order_id
+        tests:
+          - relationships:
+              to: ref('stg_orders')
+              field: order_id
+      - name: payment_method
+        tests:
+          - accepted_values:
+              values: ['coupon','credit_card','bank_transfer','gift_card']
+      - name: status
+        tests:
+          - accepted_values:
+              values: ['fail', 'success']

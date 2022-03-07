@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: stripe
+    description: Source files for Payment records
+    database: dummy_db
+    schema: load_data
+    tables:
+      - name: stripe_payments
+        description: A table containing payment records
+        columns:
+          - name: '"ID"'
+            description: Unique record of payments
+            tests:
+              - not_null
+              - unique
