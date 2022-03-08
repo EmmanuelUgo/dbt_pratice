@@ -11,10 +11,12 @@ models:
   - name: stg_orders
     columns:
       - name: order_id
+        description: Primary key for orders
         tests:
           - not_null
           - unique
       - name: status
+        description: '{{ doc("order_status") }}'
         tests: 
           - accepted_values:
               values: ['return_pending', 'returned', 'completed', 'placed', 'shipped']
